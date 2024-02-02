@@ -14,6 +14,7 @@ public enum StatusChangeType
     Multiple,
     Override,
 }
+
 [Serializable]
 public class PlayerStatus
 {
