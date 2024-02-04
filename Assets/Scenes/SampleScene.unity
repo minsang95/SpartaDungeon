@@ -1304,7 +1304,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIManager: {fileID: 1758786232}
   Player: {fileID: 164434081}
-  Items:
+  _playerStatusHandler: {fileID: 0}
+  _playerInventory: {fileID: 0}
+  ItemSlot: {fileID: 8528241127660695161, guid: 80fc2984f106f354a99417214a5bcd46, type: 3}
+  Inventory: {fileID: 185065710}
+  ShopItemList:
   - {fileID: 5352015019651555056, guid: c43b5968ae9a48e448a3fb03e7fb5b35, type: 3}
   - {fileID: 6826792929237336405, guid: f0974ca57d239154bb7b761abd49f6cf, type: 3}
   - {fileID: 863483504446001578, guid: 88aea31171e63e24094b8f49addd4752, type: 3}
@@ -1312,11 +1316,6 @@ MonoBehaviour:
   - {fileID: 3435535536677644852, guid: 2fcbf4ca62471a44292c25460ef0bcd6, type: 3}
   - {fileID: 3859907814457439429, guid: 23023cb856b0e2f4e8c8bfd9bde9a0c8, type: 3}
   - {fileID: 5754872743245534260, guid: 5c535603be2007b40b3467af06c057e3, type: 3}
-  _playerStatusHandler: {fileID: 0}
-  _playerInventory: {fileID: 0}
-  ItemSlot: {fileID: 8528241127660695161, guid: 80fc2984f106f354a99417214a5bcd46, type: 3}
-  Inventory: {fileID: 185065710}
-  _shop: {fileID: 192276293}
   ShopItemSlot: {fileID: 7179510643611884880, guid: b99a1f2ac47d4be43bb3008a2c1f0041, type: 3}
   ShopTransform: {fileID: 1603595869}
   equipIndex: 0

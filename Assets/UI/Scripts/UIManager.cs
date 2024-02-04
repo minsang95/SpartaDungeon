@@ -76,14 +76,14 @@ public class UIManager : MonoBehaviour
 
     public void SetShop()
     {
-        for(int i = 0; i < GameManager.Instance._shop.ShopItemList.Count; i++)
+        for(int i = 0; i < GameManager.Instance.ShopItemList.Count; i++)
         {
-            shopItemList.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance._shop.ShopItemList[i].itemSO.itemSprite;
+            shopItemList.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.ShopItemList[i].itemSO.itemSprite;
             shopItemList.transform.GetChild(i).GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = 
-                $"<color=#003582> {GameManager.Instance._shop.ShopItemList[i].itemSO.itemName}\n<color=#823A00><size=36>{GameManager.Instance._shop.ShopItemList[i].itemSO.itemDescription}";
-            shopItemList.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = GameManager.Instance._shop.ShopItemList[i].itemSO.addStatSprite;
-            shopItemList.transform.GetChild(i).GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = $"+{GameManager.Instance._shop.ShopItemList[i].itemSO.addSize}";
-            shopItemList.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = $"{GameManager.Instance._shop.ShopItemList[i].itemSO.price}";
+                $"<color=#003582> {GameManager.Instance.ShopItemList[i].itemSO.itemName}\n<color=#823A00><size=36>{GameManager.Instance.ShopItemList[i].itemSO.itemDescription}";
+            shopItemList.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = GameManager.Instance.ShopItemList[i].itemSO.addStatSprite;
+            shopItemList.transform.GetChild(i).GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = $"+{GameManager.Instance.ShopItemList[i].itemSO.addSize}";
+            shopItemList.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = $"{GameManager.Instance.ShopItemList[i].itemSO.price}";
         }
     }
 

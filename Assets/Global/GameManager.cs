@@ -7,12 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject UIManager;
     [SerializeField] private GameObject Player;
-    [SerializeField] private Item[] Items;
     public PlayerStatusHandler _playerStatusHandler;
     public PlayerInventory _playerInventory;
     [SerializeField] private GameObject ItemSlot;
     public Transform Inventory;
-    public Shop _shop;
+    public List<Item> ShopItemList;
     [SerializeField] private GameObject ShopItemSlot;
     [SerializeField] private Transform ShopTransform;
 
@@ -28,7 +27,6 @@ public class GameManager : MonoBehaviour
 
         _playerStatusHandler = Player.GetComponent<PlayerStatusHandler>();
         _playerInventory = Player.GetComponent<PlayerInventory>();
-        _shop = GetComponent<Shop>();
     }
     private void Start()
     {
@@ -37,10 +35,9 @@ public class GameManager : MonoBehaviour
             Instantiate(ItemSlot, Inventory);
         }
 
-        for(int i = 0; i < Items.Length; i++)
+        for(int i = 0; i < ShopItemList.Count; i++)
         {
             Instantiate(ShopItemSlot, ShopTransform);
-            _shop.ShopItemList.Add(Items[i]);
         }
         UIManager.SetActive(true);
         Player.SetActive(true);

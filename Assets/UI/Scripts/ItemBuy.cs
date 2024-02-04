@@ -7,12 +7,12 @@ public class ItemBuy : MonoBehaviour
 {
     public void Buy()
     {
-        if (GameManager.Instance._playerStatusHandler.currentStatus.statusSO.gold >= GameManager.Instance._shop.ShopItemList[transform.GetSiblingIndex()].itemSO.price)
+        if (GameManager.Instance._playerStatusHandler.currentStatus.statusSO.gold >= GameManager.Instance.ShopItemList[transform.GetSiblingIndex()].itemSO.price)
         {
             if (GameManager.Instance._playerInventory.Inventory.Count < GameManager.Instance._playerInventory.maxSpace)
             {
-                GameManager.Instance._playerStatusHandler.currentStatus.statusSO.gold -= GameManager.Instance._shop.ShopItemList[transform.GetSiblingIndex()].itemSO.price;
-                GameManager.Instance._playerInventory.Inventory.Add(GameManager.Instance._shop.ShopItemList[transform.GetSiblingIndex()]);
+                GameManager.Instance._playerStatusHandler.currentStatus.statusSO.gold -= GameManager.Instance.ShopItemList[transform.GetSiblingIndex()].itemSO.price;
+                GameManager.Instance._playerInventory.Inventory.Add(GameManager.Instance.ShopItemList[transform.GetSiblingIndex()]);
                 GameManager.Instance.Inventory.GetChild(GameManager.Instance._playerInventory.Inventory.Count-1).gameObject.SetActive(true);
                 UIManager.Instance.OnPopup("구매", "구매를 완료하였습니다.", true);
                 UIManager.Instance.SetStatusUI();
