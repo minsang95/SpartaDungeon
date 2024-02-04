@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour
     {
         equipPopup.SetActive(true);
         equipItemSprite.sprite = GameManager.Instance._playerInventory.Inventory[index].itemSO.itemSprite;
-        equipItemText.text = GameManager.Instance._playerInventory.Inventory[index].itemSO.itemDescription;
+        equipItemText.text = $"<size=48><b>{GameManager.Instance._playerInventory.Inventory[index].itemSO.itemName}</size></b>\n{GameManager.Instance._playerInventory.Inventory[index].itemSO.itemDescription}";
         equipItemStatSprite.sprite = GameManager.Instance._playerInventory.Inventory[index].itemSO.addStatSprite;
         equipItemStatText.text = $"<size=24>{GameManager.Instance._playerInventory.Inventory[index].itemSO.addStat}</size>\n{GameManager.Instance._playerInventory.Inventory[index].itemSO.addSize}";
     }

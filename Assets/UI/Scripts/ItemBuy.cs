@@ -15,6 +15,8 @@ public class ItemBuy : MonoBehaviour
                 GameManager.Instance._playerInventory.Inventory.Add(GameManager.Instance._shop.ShopItemList[transform.GetSiblingIndex()]);
                 GameManager.Instance.Inventory.GetChild(GameManager.Instance._playerInventory.Inventory.Count-1).gameObject.SetActive(true);
                 UIManager.Instance.OnPopup("구매", "구매를 완료하였습니다.", true);
+                UIManager.Instance.SetStatusUI();
+                UIManager.Instance.SetInventory();
             }
             else
             {
@@ -25,14 +27,5 @@ public class ItemBuy : MonoBehaviour
         {
             UIManager.Instance.OnPopup("구매실패", "소지 골드가 부족합니다.", false);
         }
-    }
-
-    public void SetStatusUI()
-    {
-        UIManager.Instance.SetStatusUI();
-    }
-    public void SetInventory()
-    {
-        UIManager.Instance.SetInventory();
     }
 }

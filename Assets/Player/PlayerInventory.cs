@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<Item> Inventory;
-    public int maxSpace = 60;
+    public int maxSpace = 30;
     private void Awake()
     {
         Inventory = new List<Item>();
