@@ -15,4 +15,10 @@ public class CharacterStatusSO : ScriptableObject
     public int level;
     public float exp;
     public int gold;
+    public bool equipHelmet = false;
+    public bool equipArmor = false;
+    public bool equipBoots = false;
+    public bool equipWeapon = false;
+    public bool equipRing = false;
+    public bool equipRing2 = false;
 }

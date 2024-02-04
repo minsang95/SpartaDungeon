@@ -19,4 +19,10 @@ MonoBehaviour:
   speed: 5
   level: 1
   exp: 5
-  gold: 20000
+  gold: 10000
+  equipHelmet: 0
+  equipArmor: 0
+  equipBoots: 0
+  equipWeapon: 0
+  equipRing: 0
+  equipRing2: 0

@@ -5,14 +5,5 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private ScriptableObject itemSO;
-
-    public void use()
-    {
-
-    }
-    public void Equip()
-    {
-
-    }
+    [SerializeField] public EquipmentItemSO itemSO;
 }

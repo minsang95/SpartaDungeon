@@ -10,13 +10,19 @@ public enum EquipmentType
     Weapon,
     ring,
 }
+public enum AddStat
+{
+    Atk,
+    Def,
+    Health,
+    Speed,
+}
 
-[CreateAssetMenu(fileName = "DefaultItemData", menuName = "SpartaDungeonSO/Item/Default")]
+[CreateAssetMenu(fileName = "EquipmentItemData", menuName = "SpartaDungeonSO/Item/Equipment")]
 public class EquipmentItemSO : ItemSO
 {
     public EquipmentType equipmentType;
-    public int atk;
-    public int def;
-    public int health;
-    public float speed;
+    public AddStat addStat;
+    public Sprite addStatSprite;
+    public float addSize;
 }
