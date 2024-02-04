@@ -10,14 +10,8 @@ public class PlayerStatusHandler : MonoBehaviour
     public PlayerStatus currentStatus { get; private set; }
     public List<PlayerStatus> statusModifiers = new List<PlayerStatus>();
 
-    public static PlayerStatusHandler Instance;
-
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
         UpdateCharacterStatus();
     }
 
