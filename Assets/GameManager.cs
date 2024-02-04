@@ -23,5 +23,8 @@ public class GameManager : MonoBehaviour
     {
         UIManager.SetActive(true);
         Player.SetActive(true);
+
+
+
     }
 }
