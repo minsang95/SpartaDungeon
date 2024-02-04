@@ -980,7 +980,6 @@ GameObject:
   m_Component:
   - component: {fileID: 164434082}
   - component: {fileID: 164434083}
-  - component: {fileID: 164434084}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1023,20 +1022,6 @@ MonoBehaviour:
     maxExp: 30
     statusSO: {fileID: 11400000, guid: e3ba188198631ee4991814d77a8cb821, type: 2}
   statusModifiers: []
---- !u!114 &164434084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164434081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6064fe61a8891c040b709e98094a59ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Inventory: []
-  maxSpace: 30
 --- !u!1 &169443647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,7 +1252,6 @@ GameObject:
   m_Component:
   - component: {fileID: 192276291}
   - component: {fileID: 192276292}
-  - component: {fileID: 192276293}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1305,9 +1289,10 @@ MonoBehaviour:
   UIManager: {fileID: 1758786232}
   Player: {fileID: 164434081}
   _playerStatusHandler: {fileID: 0}
-  _playerInventory: {fileID: 0}
+  InventoryMaxSpace: 30
+  Inventory: []
   ItemSlot: {fileID: 8528241127660695161, guid: 80fc2984f106f354a99417214a5bcd46, type: 3}
-  Inventory: {fileID: 185065710}
+  ItemSlotTransform: {fileID: 185065710}
   ShopItemList:
   - {fileID: 5352015019651555056, guid: c43b5968ae9a48e448a3fb03e7fb5b35, type: 3}
   - {fileID: 6826792929237336405, guid: f0974ca57d239154bb7b761abd49f6cf, type: 3}
@@ -1319,19 +1304,6 @@ MonoBehaviour:
   ShopItemSlot: {fileID: 7179510643611884880, guid: b99a1f2ac47d4be43bb3008a2c1f0041, type: 3}
   ShopTransform: {fileID: 1603595869}
   equipIndex: 0
---- !u!114 &192276293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192276290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d725839906768c46a008cc05da6639b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShopItemList: []
 --- !u!1 &211486724
 GameObject:
   m_ObjectHideFlags: 0

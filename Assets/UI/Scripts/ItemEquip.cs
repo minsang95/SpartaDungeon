@@ -8,37 +8,37 @@ public class ItemEquip : MonoBehaviour
     public void EquipPopup()
     {
         GameManager.Instance.equipIndex = transform.GetSiblingIndex();
-        if (!GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip)
+        if (!GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip)
         {
             UIManager.Instance.OnEquipPopup(GameManager.Instance.equipIndex);
         }
         else
         {
-            GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip = false;
-            switch (GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equipmentType)
+            GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip = false;
+            switch (GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equipmentType)
             {
                 case EquipmentType.Helmet:
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipHelmet = false;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def -= GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def -= GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     break;
                 case EquipmentType.Armor:
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipArmor = false;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def -= GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def -= GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     break;
                 case EquipmentType.Boots:
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipBoots = false;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.speed -= GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.speed -= GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     break;
                 case EquipmentType.Weapon:
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipWeapon = false;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk -= GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk -= GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     break;
                 case EquipmentType.Ring:
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipRing = false;
-                    if (GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Atk)
-                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk -= GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
-                    if (GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Health)
-                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.maxHealth -= GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    if (GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Atk)
+                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk -= GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    if (GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Health)
+                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.maxHealth -= GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     break;
             }
             UIManager.Instance.OnPopup("장비해제", "장비를 해제하였습니다.", true);
@@ -48,14 +48,14 @@ public class ItemEquip : MonoBehaviour
     }
     public void Equipment()
     {
-        switch (GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equipmentType)
+        switch (GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equipmentType)
         {
             case EquipmentType.Helmet:
                 if (!GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipHelmet)
                 {
-                    GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
+                    GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipHelmet = true;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def += GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def += GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     UIManager.Instance.OnPopup("장착", "장비를 착용하였습니다.", true);
                 }
                 else
@@ -66,9 +66,9 @@ public class ItemEquip : MonoBehaviour
             case EquipmentType.Armor:
                 if (!GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipArmor)
                 {
-                    GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
+                    GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipArmor = true;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def += GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.def += GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     UIManager.Instance.OnPopup("장착", "장비를 착용하였습니다.", true);
                 }
                 else
@@ -79,9 +79,9 @@ public class ItemEquip : MonoBehaviour
             case EquipmentType.Boots:
                 if (!GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipBoots)
                 {
-                    GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
+                    GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipBoots = true;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.speed += GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.speed += GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     UIManager.Instance.OnPopup("장착", "장비를 착용하였습니다.", true);
                 }
                 else
@@ -92,9 +92,9 @@ public class ItemEquip : MonoBehaviour
             case EquipmentType.Weapon:
                 if (!GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipWeapon)
                 {
-                    GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
+                    GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipWeapon = true;
-                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk += GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk += GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     UIManager.Instance.OnPopup("장착", "장비를 착용하였습니다.", true);
                 }
                 else
@@ -105,12 +105,12 @@ public class ItemEquip : MonoBehaviour
             case EquipmentType.Ring:
                 if (!GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipRing)
                 {
-                    GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
+                    GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip = true;
                     GameManager.Instance._playerStatusHandler.currentStatus.statusSO.equipRing = true;
-                    if (GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Atk)
-                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk += GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
-                    if (GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Health)
-                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.maxHealth += GameManager.Instance._playerInventory.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    if (GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Atk)
+                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.atk += GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
+                    if (GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addStat == AddStat.Health)
+                        GameManager.Instance._playerStatusHandler.currentStatus.statusSO.maxHealth += GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.addSize;
                     UIManager.Instance.OnPopup("장착", "장비를 착용하였습니다.", true);
                 }
                 else

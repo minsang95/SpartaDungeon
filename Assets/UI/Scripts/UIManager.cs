@@ -58,16 +58,16 @@ public class UIManager : MonoBehaviour
         hp.text = "체력\n" + GameManager.Instance._playerStatusHandler.currentStatus.statusSO.maxHealth.ToString();
         speed.text = "이동속도\n" + GameManager.Instance._playerStatusHandler.currentStatus.statusSO.speed.ToString();
         currentExpBar.localScale = new Vector3(GameManager.Instance._playerStatusHandler.currentStatus.statusSO.exp / GameManager.Instance._playerStatusHandler.currentStatus.maxExp, 1, 1);
-        inventoryText.text = $"Inventory  <color=#FF7500>{GameManager.Instance._playerInventory.Inventory.Count}<color=#767676> / {GameManager.Instance._playerInventory.maxSpace}";
+        inventoryText.text = $"Inventory  <color=#FF7500>{GameManager.Instance.Inventory.Count}<color=#767676> / {GameManager.Instance.InventoryMaxSpace}";
     }
 
     public void SetInventory()
     {
-        for(int i = 0; i < GameManager.Instance._playerInventory.Inventory.Count; i++)
+        for(int i = 0; i < GameManager.Instance.Inventory.Count; i++)
         {
             inventory.transform.GetChild(i).GetChild(0).gameObject.SetActive(true);
-            inventory.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance._playerInventory.Inventory[i].itemSO.itemSprite;
-            if (GameManager.Instance._playerInventory.Inventory[i].itemSO.equip)
+            inventory.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance.Inventory[i].itemSO.itemSprite;
+            if (GameManager.Instance.Inventory[i].itemSO.equip)
                 inventory.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
             else
                 inventory.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
@@ -111,10 +111,10 @@ public class UIManager : MonoBehaviour
     public void OnEquipPopup(int index)
     {
         equipPopup.SetActive(true);
-        equipItemSprite.sprite = GameManager.Instance._playerInventory.Inventory[index].itemSO.itemSprite;
-        equipItemText.text = $"<size=48><b>{GameManager.Instance._playerInventory.Inventory[index].itemSO.itemName}</size></b>\n{GameManager.Instance._playerInventory.Inventory[index].itemSO.itemDescription}";
-        equipItemStatSprite.sprite = GameManager.Instance._playerInventory.Inventory[index].itemSO.addStatSprite;
-        equipItemStatText.text = $"<size=24>{GameManager.Instance._playerInventory.Inventory[index].itemSO.addStat}</size>\n{GameManager.Instance._playerInventory.Inventory[index].itemSO.addSize}";
+        equipItemSprite.sprite = GameManager.Instance.Inventory[index].itemSO.itemSprite;
+        equipItemText.text = $"<size=48><b>{GameManager.Instance.Inventory[index].itemSO.itemName}</size></b>\n{GameManager.Instance.Inventory[index].itemSO.itemDescription}";
+        equipItemStatSprite.sprite = GameManager.Instance.Inventory[index].itemSO.addStatSprite;
+        equipItemStatText.text = $"<size=24>{GameManager.Instance.Inventory[index].itemSO.addStat}</size>\n{GameManager.Instance.Inventory[index].itemSO.addSize}";
     }
 
     public void OffEquipPopup()

@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIManager;
     [SerializeField] private GameObject Player;
     public PlayerStatusHandler _playerStatusHandler;
-    public PlayerInventory _playerInventory;
+
+    public int InventoryMaxSpace = 30;
+    public List<Item> Inventory;
     [SerializeField] private GameObject ItemSlot;
-    public Transform Inventory;
+    public Transform ItemSlotTransform;
+
     public List<Item> ShopItemList;
     [SerializeField] private GameObject ShopItemSlot;
     [SerializeField] private Transform ShopTransform;
@@ -26,13 +29,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         _playerStatusHandler = Player.GetComponent<PlayerStatusHandler>();
-        _playerInventory = Player.GetComponent<PlayerInventory>();
     }
     private void Start()
     {
-        for(int i = 0; i < _playerInventory.maxSpace; i++)
+        for(int i = 0; i < InventoryMaxSpace; i++)
         {
-            Instantiate(ItemSlot, Inventory);
+            Instantiate(ItemSlot, ItemSlotTransform);
         }
 
         for(int i = 0; i < ShopItemList.Count; i++)
