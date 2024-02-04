@@ -8,17 +8,16 @@ public class CharacterStatusSO : ScriptableObject
     [Header("CharacterSprite")]
     public Sprite characterSprite;
     [Header("Status")]
-    public int maxHealth;
-    public int atk;
-    public int def;
-    public int speed;
+    public float maxHealth;
+    public float atk;
+    public float def;
+    public float speed;
     public int level;
     public float exp;
-    public int gold;
+    public float gold;
     public bool equipHelmet = false;
     public bool equipArmor = false;
     public bool equipBoots = false;
     public bool equipWeapon = false;
     public bool equipRing = false;
-    public bool equipRing2 = false;
 }

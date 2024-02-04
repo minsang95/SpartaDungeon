@@ -17,12 +17,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text speed;
     [SerializeField] private RectTransform currentExpBar;
     [SerializeField] private GameObject inventory;
+    [SerializeField] private TMP_Text inventoryText;
     [SerializeField] private GameObject shopItemList;
     [SerializeField] private GameObject Popup;
     [SerializeField] private TMP_Text popupName;
     [SerializeField] private TMP_Text popupMessage;
     [SerializeField] private Button popupConfirmBtn;
     [SerializeField] private Button popupCancelBtn;
+    [SerializeField] private GameObject equipPopup;
+    [SerializeField] private Image equipItemSprite;
+    [SerializeField] private TMP_Text equipItemText;
+    [SerializeField] private Image equipItemStatSprite;
+    [SerializeField] private TMP_Text equipItemStatText;
 
     public static UIManager Instance;
 
@@ -52,6 +58,7 @@ public class UIManager : MonoBehaviour
         hp.text = "체력\n" + GameManager.Instance._playerStatusHandler.currentStatus.statusSO.maxHealth.ToString();
         speed.text = "이동속도\n" + GameManager.Instance._playerStatusHandler.currentStatus.statusSO.speed.ToString();
         currentExpBar.localScale = new Vector3(GameManager.Instance._playerStatusHandler.currentStatus.statusSO.exp / GameManager.Instance._playerStatusHandler.currentStatus.maxExp, 1, 1);
+        inventoryText.text = $"Inventory  <color=#FF7500>{GameManager.Instance._playerInventory.Inventory.Count}<color=#767676> / {GameManager.Instance._playerInventory.maxSpace}";
     }
 
     public void SetInventory()
@@ -60,6 +67,10 @@ public class UIManager : MonoBehaviour
         {
             inventory.transform.GetChild(i).GetChild(0).gameObject.SetActive(true);
             inventory.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = GameManager.Instance._playerInventory.Inventory[i].itemSO.itemSprite;
+            if (GameManager.Instance._playerInventory.Inventory[i].itemSO.equip)
+                inventory.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
+            else
+                inventory.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -95,5 +106,19 @@ public class UIManager : MonoBehaviour
         popupConfirmBtn.gameObject.SetActive(false);
         popupCancelBtn.gameObject.SetActive(false);
         Popup.SetActive(false);
+    }
+
+    public void OnEquipPopup(int index)
+    {
+        equipPopup.SetActive(true);
+        equipItemSprite.sprite = GameManager.Instance._playerInventory.Inventory[index].itemSO.itemSprite;
+        equipItemText.text = GameManager.Instance._playerInventory.Inventory[index].itemSO.itemDescription;
+        equipItemStatSprite.sprite = GameManager.Instance._playerInventory.Inventory[index].itemSO.addStatSprite;
+        equipItemStatText.text = $"<size=24>{GameManager.Instance._playerInventory.Inventory[index].itemSO.addStat}</size>\n{GameManager.Instance._playerInventory.Inventory[index].itemSO.addSize}";
+    }
+
+    public void OffEquipPopup()
+    {
+        equipPopup.SetActive(false);
     }
 }

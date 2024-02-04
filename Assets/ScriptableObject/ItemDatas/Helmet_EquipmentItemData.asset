@@ -19,4 +19,6 @@ MonoBehaviour:
   price: 300
   equipmentType: 0
   addStat: 1
+  addStatSprite: {fileID: 0}
   addSize: 2
+  equip: 0

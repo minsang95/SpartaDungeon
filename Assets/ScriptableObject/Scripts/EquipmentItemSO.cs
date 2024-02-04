@@ -8,7 +8,7 @@ public enum EquipmentType
     Armor,
     Boots,
     Weapon,
-    ring,
+    Ring,
 }
 public enum AddStat
 {
@@ -25,4 +25,5 @@ public class EquipmentItemSO : ItemSO
     public AddStat addStat;
     public Sprite addStatSprite;
     public float addSize;
+    public bool equip = false;
 }

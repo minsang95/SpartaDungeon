@@ -773,7 +773,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 134153591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2128297601}
+        m_TargetAssemblyTypeName: ItemEquip, Assembly-CSharp
+        m_MethodName: Equipment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1758786233}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OffEquipPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &134153591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,6 +1319,7 @@ MonoBehaviour:
   _shop: {fileID: 192276293}
   ShopItemSlot: {fileID: 7179510643611884880, guid: b99a1f2ac47d4be43bb3008a2c1f0041, type: 3}
   ShopTransform: {fileID: 1603595869}
+  equipIndex: 0
 --- !u!114 &192276293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5748,7 +5773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7863,12 +7888,18 @@ MonoBehaviour:
   speed: {fileID: 2031801913}
   currentExpBar: {fileID: 211486725}
   inventory: {fileID: 185065709}
+  inventoryText: {fileID: 1897570348}
   shopItemList: {fileID: 1603595866}
   Popup: {fileID: 1446387673}
   popupName: {fileID: 104868465}
   popupMessage: {fileID: 1947299637}
   popupConfirmBtn: {fileID: 827412444}
   popupCancelBtn: {fileID: 1692583976}
+  equipPopup: {fileID: 2128297596}
+  equipItemSprite: {fileID: 261596480}
+  equipItemText: {fileID: 1414857763}
+  equipItemStatSprite: {fileID: 1326269622}
+  equipItemStatText: {fileID: 466098745}
 --- !u!4 &1758786234
 Transform:
   m_ObjectHideFlags: 0
@@ -8403,7 +8434,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1917766586}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1758786233}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OffEquipPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1917766586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8873,6 +8916,7 @@ GameObject:
   - component: {fileID: 2128297600}
   - component: {fileID: 2128297599}
   - component: {fileID: 2128297598}
+  - component: {fileID: 2128297601}
   m_Layer: 5
   m_Name: EquipPopup
   m_TagString: Untagged
@@ -8964,6 +9008,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &2128297601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128297596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69df0e7ca37758e43b864f04cf6eefae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviour
     public PlayerStatusHandler _playerStatusHandler;
     public PlayerInventory _playerInventory;
     [SerializeField] private GameObject ItemSlot;
-    [SerializeField] private Transform Inventory;
+    public Transform Inventory;
     public Shop _shop;
     [SerializeField] private GameObject ShopItemSlot;
     [SerializeField] private Transform ShopTransform;
+
+    public int equipIndex;
 
     public static GameManager Instance;
     private void Awake()
