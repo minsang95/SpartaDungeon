@@ -13,7 +13,9 @@ public class ItemBuy : MonoBehaviour
             {
                 GameManager.Instance._playerStatusHandler.currentStatus.statusSO.gold -= GameManager.Instance.ShopItemList[transform.GetSiblingIndex()].itemSO.price;
                 EquipmentItemSO cloneSO = Instantiate(GameManager.Instance.ShopItemList[transform.GetSiblingIndex()].itemSO);
-                GameManager.Instance.Inventory.Add(new Item { itemSO = cloneSO });
+                Item addItem = Instantiate(GameManager.Instance.ShopItemList[transform.GetSiblingIndex()]);
+                addItem.itemSO = cloneSO;
+                GameManager.Instance.Inventory.Add(addItem);
                 GameManager.Instance.ItemSlotTransform.GetChild(GameManager.Instance.Inventory.Count-1).gameObject.SetActive(true);
                 UIManager.Instance.OnPopup("구매", "구매를 완료하였습니다.", true);
                 UIManager.Instance.SetStatusUI();
