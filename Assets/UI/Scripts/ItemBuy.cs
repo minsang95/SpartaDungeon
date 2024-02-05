@@ -12,7 +12,8 @@ public class ItemBuy : MonoBehaviour
             if (GameManager.Instance.Inventory.Count < GameManager.Instance.InventoryMaxSpace)
             {
                 GameManager.Instance._playerStatusHandler.currentStatus.statusSO.gold -= GameManager.Instance.ShopItemList[transform.GetSiblingIndex()].itemSO.price;
-                GameManager.Instance.Inventory.Add(GameManager.Instance.ShopItemList[transform.GetSiblingIndex()]);
+                EquipmentItemSO cloneSO = Instantiate(GameManager.Instance.ShopItemList[transform.GetSiblingIndex()].itemSO);
+                GameManager.Instance.Inventory.Add(new Item { itemSO = cloneSO });
                 GameManager.Instance.ItemSlotTransform.GetChild(GameManager.Instance.Inventory.Count-1).gameObject.SetActive(true);
                 UIManager.Instance.OnPopup("구매", "구매를 완료하였습니다.", true);
                 UIManager.Instance.SetStatusUI();

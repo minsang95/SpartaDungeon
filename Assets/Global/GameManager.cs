@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIManager;
     public int equipIndex;
 
-
     public static GameManager Instance;
     private void Awake()
     {
