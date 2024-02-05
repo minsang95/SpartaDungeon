@@ -5,20 +5,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject UIManager;
+    [Header("Player")]
     [SerializeField] private GameObject Player;
     public PlayerStatusHandler _playerStatusHandler;
-
+    [Header("Inventory")]
     public int InventoryMaxSpace = 30;
-    public List<Item> Inventory;
     [SerializeField] private GameObject ItemSlot;
     public Transform ItemSlotTransform;
-
+    public List<Item> Inventory;
+    [Header("Shop")]
     public List<Item> ShopItemList;
     [SerializeField] private GameObject ShopItemSlot;
     [SerializeField] private Transform ShopTransform;
-
+    [Header("-")]
+    [SerializeField] private GameObject UIManager;
     public int equipIndex;
+
 
     public static GameManager Instance;
     private void Awake()
