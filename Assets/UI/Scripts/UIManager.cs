@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
     }
     public void SetStatusUI()
     {
+        GameManager.Instance.CharacterSprite.sprite = GameManager.Instance._playerStatusHandler.currentStatus.statusSO.characterSprite;
         characterType.text = GameManager.Instance._playerStatusHandler.currentStatus.characterType.ToString();
         playerName.text = GameManager.Instance._playerStatusHandler.currentStatus.name;
         characterLevel.text = "Lv " + GameManager.Instance._playerStatusHandler.currentStatus.statusSO.level.ToString();

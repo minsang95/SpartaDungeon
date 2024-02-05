@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Player")]
     [SerializeField] private GameObject Player;
+    public SpriteRenderer CharacterSprite;
     public PlayerStatusHandler _playerStatusHandler;
     [Header("Inventory")]
     public int InventoryMaxSpace = 30;

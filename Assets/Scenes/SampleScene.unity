@@ -1287,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 164434081}
+  CharacterSprite: {fileID: 875671161}
   _playerStatusHandler: {fileID: 0}
   InventoryMaxSpace: 30
   ItemSlot: {fileID: 8528241127660695161, guid: 80fc2984f106f354a99417214a5bcd46, type: 3}
