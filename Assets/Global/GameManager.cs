@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [Header("-")]
     [SerializeField] private GameObject UIManager;
     public int equipIndex;
+    public int itemIndex;
 
     public static GameManager Instance;
     private void Awake()

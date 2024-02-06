@@ -16,7 +16,9 @@ public class ItemBuy : MonoBehaviour
                 Item addItem = Instantiate(GameManager.Instance.ShopItemList[transform.GetSiblingIndex()]);
                 addItem.itemSO = cloneSO;
                 GameManager.Instance.Inventory.Add(addItem);
-                GameManager.Instance.ItemSlotTransform.GetChild(GameManager.Instance.Inventory.Count-1).gameObject.SetActive(true);
+                GameManager.Instance.ItemSlotTransform.GetChild(GameManager.Instance.itemIndex).GetComponent<Button>().enabled = true;
+                GameManager.Instance.ItemSlotTransform.GetChild(GameManager.Instance.itemIndex).GetChild(0).GetComponent<Image>().color = new Color(255, 255, 255, 255);
+                GameManager.Instance.itemIndex++;
                 UIManager.Instance.OnPopup("구매", "구매를 완료하였습니다.", true);
                 UIManager.Instance.SetStatusUI();
                 UIManager.Instance.SetInventory();
