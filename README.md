@@ -20,7 +20,6 @@
 
  - 인벤토리창 상단 = 현재 아이템 갯수 , 최대 아이템 갯수 표시
  - 게임 시작시, GameManager에 있는 InventoryMaxSpace 의 수치만큼 인벤토리창에 아이템 슬롯(Button) 프리팹 생성
- - 아이템 슬롯 프리팹은 SetActive(false)상태로 생성되며, List<Item> Inventory 에 아이템이 추가될 때마다 true 로 변경
  - 아이템 장착 , 장착해제 (EquipPopup, Popup)
  - 동일 타입 아이템 중복 착용 불가 ( 헬멧, 아머, 부츠, 웨폰, 링 )
  - 아이템 장착시 [E] 표시
