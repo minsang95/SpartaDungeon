@@ -788,11 +788,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1758786233}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OffEquipPopup
-        m_Mode: 1
+        m_MethodName: OnOffUI
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2128297596}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1305,6 +1305,7 @@ MonoBehaviour:
   ShopTransform: {fileID: 1603595869}
   UIManager: {fileID: 1758786232}
   equipIndex: 0
+  itemIndex: 0
 --- !u!1 &211486724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,11 +4772,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1758786233}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OffPopup
-        m_Mode: 1
+        m_MethodName: OnOffUI
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1446387673}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7395,7 +7396,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1000}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1692583974
 GameObject:
@@ -7482,11 +7483,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1758786233}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OffPopup
-        m_Mode: 1
+        m_MethodName: OnOffUI
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1446387673}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8409,11 +8410,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1758786233}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OffEquipPopup
-        m_Mode: 1
+        m_MethodName: OnOffUI
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2128297596}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

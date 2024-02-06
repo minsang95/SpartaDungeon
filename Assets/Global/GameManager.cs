@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public int itemIndex;
 
     public static GameManager Instance;
+
     private void Awake()
     {
         if (Instance == null)
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
 
         _playerStatusHandler = Player.GetComponent<PlayerStatusHandler>();
     }
+    // 인벤토리, 상점 슬롯 생성
     private void Start()
     {
         for(int i = 0; i < InventoryMaxSpace; i++)

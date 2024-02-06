@@ -411,7 +411,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2375661054321952529}
         m_TargetAssemblyTypeName: ItemEquip, Assembly-CSharp
-        m_MethodName: EquipPopup
+        m_MethodName: EquipCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

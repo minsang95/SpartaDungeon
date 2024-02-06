@@ -36,16 +36,45 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
     }
+
     private void Start()
     {
         SetStatusUI();
         SetInventory();
         SetShop();
     }
+    // UI 활성화, 비활성화
     public void OnOffUI(GameObject ui)
     {
         ui.SetActive(!ui.activeSelf);
     }
+    // 팝업 활성화
+    public void OnPopup(string popupname, string message, bool confirmOrCancel)
+    {
+        Popup.SetActive(true);
+        popupName.text = popupname;
+        popupMessage.text = message;
+        if (confirmOrCancel)
+        {
+            popupConfirmBtn.gameObject.SetActive(true);
+            popupCancelBtn.gameObject.SetActive(false);
+        }
+        else
+        {
+            popupConfirmBtn.gameObject.SetActive(false);
+            popupCancelBtn.gameObject.SetActive(true);
+        }
+    }
+    // 장착 팝업 활성화
+    public void OnEquipPopup(int index)
+    {
+        equipPopup.SetActive(true);
+        equipItemSprite.sprite = GameManager.Instance.Inventory[index].itemSO.itemSprite;
+        equipItemText.text = $"<size=48><b>{GameManager.Instance.Inventory[index].itemSO.itemName}</size></b>\n{GameManager.Instance.Inventory[index].itemSO.itemDescription}";
+        equipItemStatSprite.sprite = GameManager.Instance.Inventory[index].itemSO.addStatSprite;
+        equipItemStatText.text = $"<size=24>{GameManager.Instance.Inventory[index].itemSO.addStat}</size>\n{GameManager.Instance.Inventory[index].itemSO.addSize}";
+    }
+    // 스테이터스 UI 초기화
     public void SetStatusUI()
     {
         GameManager.Instance.CharacterSprite.sprite = GameManager.Instance._playerStatusHandler.currentStatus.statusSO.characterSprite;
@@ -61,7 +90,7 @@ public class UIManager : MonoBehaviour
         currentExpBar.localScale = new Vector3(GameManager.Instance._playerStatusHandler.currentStatus.statusSO.exp / GameManager.Instance._playerStatusHandler.currentStatus.maxExp, 1, 1);
         inventoryText.text = $"Inventory  <color=#FF7500>{GameManager.Instance.Inventory.Count}<color=#767676> / {GameManager.Instance.InventoryMaxSpace}";
     }
-
+    // 인벤토리 UI 초기화
     public void SetInventory()
     {
         for(int i = 0; i < GameManager.Instance.Inventory.Count; i++)
@@ -74,7 +103,7 @@ public class UIManager : MonoBehaviour
                 inventory.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
         }
     }
-
+    // 상점 UI 초기화
     public void SetShop()
     {
         for(int i = 0; i < GameManager.Instance.ShopItemList.Count; i++)
@@ -86,40 +115,5 @@ public class UIManager : MonoBehaviour
             shopItemList.transform.GetChild(i).GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = $"+{GameManager.Instance.ShopItemList[i].itemSO.addSize}";
             shopItemList.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = $"{GameManager.Instance.ShopItemList[i].itemSO.price}";
         }
-    }
-
-    public void OnPopup(string popupname, string message, bool a)
-    {
-        Popup.SetActive(true);
-        popupName.text = popupname;
-        popupMessage.text = message;
-        if (a)
-        {
-            popupConfirmBtn.gameObject.SetActive(true);
-        }
-        else
-        {
-            popupCancelBtn.gameObject.SetActive(true);
-        }
-    }
-    public void OffPopup()
-    {
-        popupConfirmBtn.gameObject.SetActive(false);
-        popupCancelBtn.gameObject.SetActive(false);
-        Popup.SetActive(false);
-    }
-
-    public void OnEquipPopup(int index)
-    {
-        equipPopup.SetActive(true);
-        equipItemSprite.sprite = GameManager.Instance.Inventory[index].itemSO.itemSprite;
-        equipItemText.text = $"<size=48><b>{GameManager.Instance.Inventory[index].itemSO.itemName}</size></b>\n{GameManager.Instance.Inventory[index].itemSO.itemDescription}";
-        equipItemStatSprite.sprite = GameManager.Instance.Inventory[index].itemSO.addStatSprite;
-        equipItemStatText.text = $"<size=24>{GameManager.Instance.Inventory[index].itemSO.addStat}</size>\n{GameManager.Instance.Inventory[index].itemSO.addSize}";
-    }
-
-    public void OffEquipPopup()
-    {
-        equipPopup.SetActive(false);
     }
 }

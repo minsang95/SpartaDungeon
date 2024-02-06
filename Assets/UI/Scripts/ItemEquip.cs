@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemEquip : MonoBehaviour
 {
-    public void EquipPopup()
+    public void EquipCheck()
     {
         GameManager.Instance.equipIndex = transform.GetSiblingIndex();
         if (!GameManager.Instance.Inventory[GameManager.Instance.equipIndex].itemSO.equip)
